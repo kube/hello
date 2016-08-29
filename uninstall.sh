@@ -17,6 +17,6 @@ launchctl unload ~/Library/LaunchAgents/$PLIST
 
 # Remove .plist and Hello directory
 rm -f ~/Library/LaunchAgents/$PLIST
-rm -f $DIR
+rm -rf $DIR
 
 echo "Uninstalled Hello."
