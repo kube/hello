@@ -6,5 +6,5 @@ Install
 -------
 From a terminal:
 ```
-git clone https://github.com/kube/hello ~/.hello && ~/.hello/install.sh
+git clone --depth=1 https://github.com/kube/hello ~/.hello && ~/.hello/install.sh
 ```
