@@ -12,10 +12,11 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 PLIST=io.kube.hello.plist
 
-# Set correct directory in .plist and place it in LaunchAgents
-sed s:{{HELLO_DIR}}:$DIR:g $DIR/$PLIST > ~/Library/LaunchAgents/$PLIST
+# Unload Hello agent
+launchctl unload ~/Library/LaunchAgents/$PLIST
 
-# Load Hello agent
-launchctl load ~/Library/LaunchAgents/$PLIST
+# Remove .plist and Hello directory
+rm -f ~/Library/LaunchAgents/$PLIST
+rm -f $DIR
 
-echo "Hello is installed!"
+echo "Uninstalled Hello."

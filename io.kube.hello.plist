@@ -9,7 +9,7 @@
     <array>
       <string>/bin/sh</string>
       <string>-c</string>
-      <string>exec $HOME/.hello/agent.rb</string>
+      <string>exec {{HELLO_DIR}}/agent.rb</string>
     </array>
 
     <key>RunAtLoad</key>
