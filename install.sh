@@ -18,4 +18,15 @@ sed s:{{HELLO_DIR}}:$DIR:g $DIR/$PLIST > ~/Library/LaunchAgents/$PLIST
 # Load Hello agent
 launchctl load ~/Library/LaunchAgents/$PLIST
 
+# Create bin directory
+mkdir -p $DIR/bin
+ln -sf $DIR/cli.rb $DIR/bin/hello
+
+# Modify .profile to source launchd PATH
+cat > $HOME/.profile <<EOL
+
+export PATH=$PATH:`launchctl getenv PATH`
+
+EOL
+
 echo "Hello is installed!"

@@ -12,6 +12,11 @@
       <string>exec {{HELLO_DIR}}/agent.rb</string>
     </array>
 
+    <key>StandardErrorPath</key>
+    <string>/tmp/mycommand.err</string>
+    <key>StandardOutPath</key>
+    <string>/tmp/mycommand.out</string>
+
     <key>RunAtLoad</key>
     <true/>
   </dict>
