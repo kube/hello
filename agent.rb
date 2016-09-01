@@ -38,10 +38,10 @@ end
 
 # Add path to env PATH without duplication
 def add_env_path path
-  paths = `/bin/launchctl getenv PATH`.chomp.split(':').unshift(path).uniq * ':'
+  paths = `/bin/launchctl getenv PATH`.chomp.split(':').map(&:chomp).unshift(path).uniq * ':'
   `/bin/launchctl setenv PATH #{paths}`
 
-  ENV['PATH'] = ENV['PATH'].chomp.split(':').unshift(path).uniq * ':'
+  ENV['PATH'] = ENV['PATH'].chomp.split(':').unshift(path).map(&:chomp).uniq * ':'
 end
 
 def start_background_task package
