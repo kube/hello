@@ -22,11 +22,11 @@ launchctl load ~/Library/LaunchAgents/$PLIST
 mkdir -p $DIR/bin
 ln -sf $DIR/cli.rb $DIR/bin/hello
 
-# Modify .profile to source launchd PATH
-cat > $HOME/.profile <<EOL
+# Modify .zprofile to source launchd PATH
+cat > $HOME/.zprofile <<EOL
 
 # Source PATH from launchd
-export PATH=$PATH:`launchctl getenv PATH`
+export PATH=\$PATH:\`launchctl getenv PATH\`
 
 EOL
 
