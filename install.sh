@@ -25,6 +25,7 @@ ln -sf $DIR/cli.rb $DIR/bin/hello
 # Modify .profile to source launchd PATH
 cat > $HOME/.profile <<EOL
 
+# Source PATH from launchd
 export PATH=$PATH:`launchctl getenv PATH`
 
 EOL
